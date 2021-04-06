@@ -1,8 +1,20 @@
 import streamlit as st
 import numpy as np
 
+
+st.markdown('''
+[Spacer Columns are now fixed](https://share.streamlit.io/tylerjrichards/streamlit_goodreads_app/books.py)
+
+This fix was introduced in v0.78
+''')
+
+st.markdown('''
+---
+[Fix for image galleries not being the same size](https://github.com/streamlit/streamlit/issues/3013)
+''')
 # Produce 3 images and put them into 3 columns next to each other, scaling them automatically to columns width
-[col.image(img, use_column_width=True) for col, img in zip(st.beta_columns(3), np.zeros((3, 250, 250, 3)))]
+with st.echo():
+    [col.image(img, use_column_width=True) for col, img in zip(st.beta_columns(3), np.zeros((3, 250, 250, 3)))]
 
 
 st.markdown('---')
@@ -39,6 +51,7 @@ with st.echo():
 
 st.markdown('---')
 
+st.subheader('Not yet fixed')
 st.markdown('''
 [Remove Columns altogether below width 640px](https://github.com/streamlit/streamlit/issues/2896)
 ''')
